@@ -12,5 +12,5 @@ class Calculo extends React.Component {
       };
   }
 
-  resultado =
+
 }
