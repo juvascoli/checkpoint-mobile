@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { useState } from 'react';
-import RenderizarDados from './src/Components/renderizarDados';
+import Resultado from './src/Components/resultado';
  
 export default function App() {
   const [valorOriginal, setValorOriginal] = useState(0)
   const [aumento, setAumento] = useState(0)
   const [resultado,setResultado]=useState(0)
+
 
  
   return (
@@ -19,6 +20,7 @@ export default function App() {
         placeholder='Digite o valor original do produto: '
         value={valorOriginal}
         onChangeText={(valor) => setValorOriginal(valor)}
+        
       />
       <TextInput
         style={styles.input}
@@ -33,11 +35,14 @@ export default function App() {
         fontSize={20}
         onPress={()=>setResultado(true)}
       />
-      {resultado&&<RenderizarDados  valorOriginal= {valorOriginal} aumento={aumento} resultado={resultado}/>}
- 
+      {resultado&&<Resultado  valorOriginal= {valorOriginal} aumento={aumento} resultado={resultado}/>}
+      
+  
     </View>
   );
-}
+
+  };
+
  
 const styles = StyleSheet.create({
   container: {
